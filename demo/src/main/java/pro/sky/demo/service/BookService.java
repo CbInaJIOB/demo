@@ -1,5 +1,6 @@
 package pro.sky.demo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.sky.demo.model.Book;
 import pro.sky.demo.repositories.BookRepository;
@@ -10,6 +11,7 @@ import java.util.Collection;
 @Service
 public class BookService {
 
+    @Autowired
     private final BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository) {

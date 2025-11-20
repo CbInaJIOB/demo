@@ -1,6 +1,5 @@
 package pro.sky.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pro.sky.demo.model.Book;
@@ -12,6 +11,7 @@ import java.util.Collection;
 @RequestMapping("/books")
 public class BookController {
 
+    //    @Autowired
     private final BookService bookService;
 
     public BookController(BookService bookService) {
@@ -19,8 +19,8 @@ public class BookController {
     }
 
     @GetMapping("{id}")         //GET получить книгу по id
-    public ResponseEntity<Book> getBookInfo(@PathVariable Long id) {
-        Book book =  bookService.findBook(id);
+    public ResponseEntity<Book> getBookInfo(@PathVariable long id) {
+        Book book = bookService.findBook(id);
         if (book == null) {
             return ResponseEntity.notFound().build();
         }

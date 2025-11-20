@@ -11,7 +11,6 @@ import java.util.Collection;
 @RequestMapping("/books")
 public class BookController {
 
-    //    @Autowired
     private final BookService bookService;
 
     public BookController(BookService bookService) {

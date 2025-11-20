@@ -19,34 +19,23 @@ public class BookService {
     }
 
     public Book createBook(Book book) {
-//        book.setId(++lastId);
-//        books.put(lastId, book);
-//        return book;
         return bookRepository.save(book);
     }
 
     public Book findBook(long id) {
-//        return books.get(id);
         return bookRepository.findById(id).get();
     }
 
     public Book editBook(Book book) {
-//        if (books.containsKey(book.getId())) {
-//            books.put(book.getId(), book);
-//            return book;
-//        }
-//        return null;
         return bookRepository.save(book);
     }
 
     public void deleteBook(long id) {
-//        return books.remove(id);
         bookRepository.deleteById(id);
 
     }
 
     public Collection<Book> getAllBooks() {
-//        return books.values();
         return bookRepository.findAll();
     }
 }

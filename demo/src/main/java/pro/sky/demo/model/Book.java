@@ -3,7 +3,6 @@ package pro.sky.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
@@ -12,8 +11,6 @@ import java.util.Objects;
 public class Book {
     @Id
     @GeneratedValue
-//    @GeneratedValue(strategy = GenerationType.IDENTITY) //чтобы не перепрыгивало через 50
-//    @GeneratedValue(strategy = GenerationType.AUTO) //чтобы не перепрыгивало через 50
     private long id;
 
     private String name;

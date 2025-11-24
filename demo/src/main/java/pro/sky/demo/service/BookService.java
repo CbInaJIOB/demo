@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.sky.demo.model.Book;
 import pro.sky.demo.repositories.BookRepository;
-
 import java.util.Collection;
 
 
@@ -32,10 +31,21 @@ public class BookService {
 
     public void deleteBook(long id) {
         bookRepository.deleteById(id);
-
     }
 
     public Collection<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
+
+    public Book findByName(String name) {
+        return bookRepository.findByNameIgnoreCase(name);
+    }
+
+    public Collection<Book> findByAuthor(String author) {
+        return bookRepository.findBooksByAuthorContainsIgnoreCase(author);
+    }
+
+    public Collection<Book> findByNamePart(String part) {
+        return bookRepository.findAllByNameContainsIgnoreCase(part);
     }
 }
